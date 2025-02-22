@@ -7,14 +7,14 @@ TAG = main
 # INPUT_FILE=test.bas
 # OUTPUT_FILE=test.prg
 # TYPE=prg
-COMPILER=c128
+COMPILER=c64
 INPUT_FILE=test.bas
 OUTPUT_FILE=test.prg
-TYPE=prg
+TYPE=$(shell echo $(OUTPUT_FILE) | sed 's/.*\.//')
 
 # Run Vars
 VICE_PATH=/Applications/vice-arm64-sdl2-3.8/bin
-EMULATOR=x128
+EMULATOR=x64sc
 
 .PHONY: build
 # Build the Docker image

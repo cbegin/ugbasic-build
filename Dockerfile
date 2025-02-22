@@ -67,5 +67,8 @@ COPY ugbc-main.tar.gz .
 # Extract the archive
 RUN tar -xzf ugbc-main.tar.gz
 
+# Create symlinks for z88dk binaries
+RUN ln -s /z88dk/bin/* /usr/local/bin
+
 # Command to run when container starts
 CMD ["/bin/bash"]

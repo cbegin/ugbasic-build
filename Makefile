@@ -1,12 +1,8 @@
 # Docker image configuration
-IMAGE_NAME = ugbasic
+IMAGE_NAME = docker.io/cbegin/ugbasic
 TAG = main
 
 # Compile Vars
-# COMPILER=c64
-# INPUT_FILE=test.bas
-# OUTPUT_FILE=test.prg
-# TYPE=prg
 COMPILER=c64
 INPUT_FILE=test.bas
 OUTPUT_FILE=test.prg
@@ -31,6 +27,16 @@ clean:
 # Build with no cache
 rebuild:
 	docker build --no-cache -t $(IMAGE_NAME):$(TAG) .
+
+# Push the Docker image
+.PHONY: push
+push:
+	docker push $(IMAGE_NAME):$(TAG)
+
+# Pull the Docker image
+.PHONY: pull
+pull:
+	docker pull $(IMAGE_NAME):$(TAG)
 
 .PHONY: list
 # List all Docker images
@@ -60,3 +66,4 @@ compile:
 .PHONY: run
 run:
 	@$(VICE_PATH)/$(EMULATOR) $(OUTPUT_FILE)
+

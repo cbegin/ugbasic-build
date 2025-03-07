@@ -58,4 +58,4 @@ choose the option to download "all compilers",
 to support all platforms.
 
 Drop the `ugbc-main.tar.gz` file into the root
-of the cloned git repo, and run make build.
+of the cloned git repo, and run `make build`.

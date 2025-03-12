@@ -47,6 +47,12 @@ VICE_PATH=/Applications/vice-arm64-sdl2-3.8/bin
 EMULATOR=x64sc
 ```
 
+My typical dev loop is simply code, and then:
+
+```
+make compile && make run
+```
+
 ## Building
 
 If you choose to build from scratch (takes hours),
